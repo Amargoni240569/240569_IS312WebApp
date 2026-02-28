@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+    Author: Abel Margoni WAMANIMBO
+    Student ID: 240569
+    Course: IS312 Web Development
+    Date Created: 28 February 2026
+    Description: Interactive banking dashboard using CSS Grid and JavaScript.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diwai Bank Ltd - Dashboard</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="IS312_Lab1_240569.css">
+</head>
+
+<body>
+
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <h1>Diwai Bank Ltd</h1>
+    </header>
+
+    <!-- NAVIGATION SECTION -->
+    <nav class="nav">
+        <ul>
+            <li><a href="#">About DBL</a></li>
+            <li><a href="#">Personal Banking</a></li>
+            <li><a href="#">Business Banking</a></li>
+            <li><a href="#">International Banking</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN GRID CONTAINER -->
+    <div class="container">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <h2>Transfer Money</h2>
+            <ul>
+                <li><button onclick="showAccounts()">Accounts</button></li>
+                <li><button onclick="showTransfer()">Transfer Between Accounts</button></li>
+                <li><button onclick="showThirdParty()">Third Party Transfers</button></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="content">
+            <h2 id="dashboardTitle">Dashboard</h2>
+            <div id="dashboardContent">
+
+            <p>
+                If a customer clicks on <strong>Accounts</strong>, 
+                this page will display detailed account information including 
+                balances and transaction history.
+            </p>
+
+            <p>
+                If customers click on <strong>Transfer Between Accounts</strong>, 
+                this section will display a transfer form to move funds 
+                between savings and checking accounts.
+            </p>
+
+            <p>
+                If a customer clicks on <strong>Third Party Transfers</strong>, 
+                the system will provide a secure transfer form for 
+                sending money to external beneficiaries.
+            </p>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <p>&copy; Diwai Bank Ltd | IS312 Lab1 240569 </p>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="IS312_Lab1_240569.js"></script>
+
+</body>
+</html>

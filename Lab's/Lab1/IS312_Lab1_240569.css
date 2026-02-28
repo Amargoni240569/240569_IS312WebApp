@@ -1,0 +1,99 @@
+/*
+    Author: Abel Margoni WAMANIMBO
+    Student ID: 240569
+    Description:
+    CSS Grid Layout Styling for Interactive Banking Dashboard
+*/
+
+/* GENERAL PAGE SETTINGS */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
+}
+
+/* HEADER */
+.header {
+    background-color: green;
+    color: black;
+    text-align: center;
+    padding: 25px;
+}
+
+/* NAVIGATION BAR */
+.nav {
+    background-color: yellow;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    padding: 15px 20px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.nav ul li:hover {
+    background-color: lightgray;
+}
+
+/* GRID LAYOUT */
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background-color: #d9d9d9;
+    padding: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+/* SIDEBAR BUTTONS */
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(190, 187, 187);
+    color: rgb(26, 22, 22);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sidebar button:hover {
+    background-color: rgb(238, 241, 11);
+}
+
+/* CONTENT AREA */
+.content {
+    background-color: #f2f2f2;
+    padding: 20px;
+    min-height: 250px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #cccccc;
+    text-align: center;
+    padding: 15px;
+}
