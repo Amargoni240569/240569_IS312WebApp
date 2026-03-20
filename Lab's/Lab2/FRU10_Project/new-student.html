@@ -1,0 +1,129 @@
+<!-- Author: Abel Margoni WAMANIMBO-->
+<!-- Date: 18/03/26 -->
+<!-- Unit: IS312 Web Application Development -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Student</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let studentNo = document.getElementById("studentNo").value.trim();
+            let firstname = document.getElementById("firstname").value.trim();
+            let lastname = document.getElementById("lastname").value.trim();
+            let gender = document.getElementById("gender").value;
+            let contact = document.getElementById("contact").value.trim();
+            let program = document.getElementById("program").value;
+
+            let error = document.getElementById("error");
+
+            if (studentNo === "" || firstname === "" || lastname === "" ||
+                gender === "" || contact === "" || program === "") {
+                error.innerHTML = "⚠️ All fields must be filled!";
+                return false;
+            }
+
+            error.innerHTML = "";
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>Add New Student</h2>
+
+    <form action="addnewstudent.php" method="POST" onsubmit="return validateForm()">
+
+        <label>Student No</label>
+        <input type="number" id="studentNo" name="studentNo">
+
+        <label>First Name</label>
+        <input type="text" id="firstname" name="firstname">
+
+        <label>Last Name</label>
+        <input type="text" id="lastname" name="lastname">
+
+        <label>Gender</label>
+        <select id="gender" name="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label>Contact No</label>
+        <input type="text" id="contact" name="contact">
+
+        <label>Program Code</label>
+        <select id="program" name="program">
+            <option value="">Select Program</option>
+            <option value="BS">BS</option>
+            <option value="IS">IS</option>
+        </select>
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Add Student">
+    </form>
+</div>
+
+</body>
+</html>

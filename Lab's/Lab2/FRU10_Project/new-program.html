@@ -1,0 +1,105 @@
+<!-- Author: Abel Margoni WAMANIMBO-->
+<!-- Date: 18/03/26 -->
+<!-- Unit: IS312 Web Application Development -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Program</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let code = document.getElementById("code").value.trim();
+            let name = document.getElementById("name").value.trim();
+            let errorMsg = document.getElementById("errorMsg");
+
+            if (code === "" || name === "") {
+                errorMsg.innerHTML = "All fields must be filled!";
+                return false;
+            }
+
+            errorMsg.innerHTML = "";
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>Add New Program</h2>
+
+    <form action="addnewprogram.php" method="POST" onsubmit="return validateForm()">
+        
+        <label>Program Code</label>
+        <input type="text" id="code" name="code">
+
+        <label>Program Name</label>
+        <input type="text" id="name" name="name">
+
+        <div id="errorMsg" class="error"></div>
+
+        <input type="submit" value="Add Program">
+    </form>
+</div>
+
+</body>
+</html>
